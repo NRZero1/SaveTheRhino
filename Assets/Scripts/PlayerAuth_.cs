@@ -22,10 +22,15 @@ public class PlayerAuth_ : MonoBehaviour
             } else {
                 menuControl.ErrorOpen();
             }
-        } else if (string.IsNullOrEmpty(UsernameText)) {
-            menuControl.ErrorOpen();
-        } else if (string.IsNullOrEmpty(UsernameText)) {
-            menuControl.ErrorOpen();
+        } 
+        else 
+        {
+            if (string.IsNullOrEmpty(UsernameText)) {
+                menuControl.ErrorOpen();
+            }  
+            if (string.IsNullOrEmpty(PasswordText)) {
+                menuControl.ErrorOpen();
+            }
         }
     }
 }
