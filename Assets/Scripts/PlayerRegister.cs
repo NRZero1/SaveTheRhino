@@ -12,8 +12,6 @@ public class PlayerRegister : MonoBehaviour
 
     public void Register()
     {
-        string UsernameKey = Username.text;
-
         PlayerPrefs.SetString("email_" + Username.text, Email.text);
         PlayerPrefs.SetString("username_" + Username.text, Username.text);
         PlayerPrefs.SetString("password_" + Username.text, Password.text);
