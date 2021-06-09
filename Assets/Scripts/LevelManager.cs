@@ -16,10 +16,12 @@ public class LevelManager : MonoBehaviour
     public void levelClearPanelShow()
     {
         LevelClear.SetActive(true);
+        GameOver.SetActive(false);
     }
 
     public void gameOverPanelShow()
     {
+        LevelClear.SetActive(false);
         GameOver.SetActive(true);
         PlayerPrefs.SetInt("session_score", 0);
         PlayerPrefs.SetInt("session_health", 3);
