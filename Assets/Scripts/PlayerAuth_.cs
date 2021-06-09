@@ -20,6 +20,7 @@ public class PlayerAuth_ : MonoBehaviour
             if (Password.text == PlayerPrefs.GetString("password_" + UsernameKey)) {
                 PlayerPrefs.SetString("session_name", UsernameKey);
                 PlayerPrefs.SetInt("session_score", 0);
+                PlayerPrefs.SetInt("session_health", 3);
 
                 if (!PlayerPrefs.HasKey("HS1_Username"))
                 {

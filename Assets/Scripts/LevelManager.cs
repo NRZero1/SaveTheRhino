@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour
     {
         GameOver.SetActive(true);
         PlayerPrefs.SetInt("session_score", 0);
+        PlayerPrefs.SetInt("session_health", 3);
     }
 
     public void gameClear()
@@ -54,5 +55,6 @@ public class LevelManager : MonoBehaviour
         }
 
         PlayerPrefs.SetInt("session_score", 0);
+        PlayerPrefs.SetInt("session_health", 3);
     }
 }

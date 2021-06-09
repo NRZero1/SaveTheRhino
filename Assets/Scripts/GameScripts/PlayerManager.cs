@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PlayerManager : MonoBehaviour
 {
     public int score = 0;
-    public int health = 3;
+    public int health = 0;
     public Text lbl_Score;
     public Text lbl_Health;
     public UnityEvent game_complete;
@@ -18,6 +18,8 @@ public class PlayerManager : MonoBehaviour
     {
         this.score = PlayerPrefs.GetInt("session_score");
         lbl_Score.text = "Score : " + this.score.ToString();
+        this.health = PlayerPrefs.GetInt("session_health");
+        lbl_Health.text = "Health : " + this.health.ToString();
     }
     // Update is called once per frame
     void Update()
@@ -38,6 +40,7 @@ public class PlayerManager : MonoBehaviour
     {
         health -= damage;
         lbl_Health.text = "Health : " + health.ToString();
+        PlayerPrefs.SetInt("session_health", this.health);
     }
 
     public void addScore(int score)
