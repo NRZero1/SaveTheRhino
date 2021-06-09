@@ -24,14 +24,14 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isEnd == false && GameObject.FindGameObjectsWithTag("Animal").Length == 0)
-        {
-            game_complete.Invoke();
-            isEnd = true;
-        }
-        else if (isEnd == false && health <= 0)
+        if (isEnd == false && health <= 0)
         {
             game_lose.Invoke();
+            isEnd = true;
+        }
+        else if(isEnd == false && GameObject.FindGameObjectsWithTag("Animal").Length == 0)
+        {
+            game_complete.Invoke();
             isEnd = true;
         }
     }
