@@ -13,6 +13,12 @@ public class PlayerManager : MonoBehaviour
     public UnityEvent game_complete;
     public UnityEvent game_lose;
     bool isEnd = false;
+
+    void Start()
+    {
+        this.score = PlayerPrefs.GetInt("session_score");
+        lbl_Score.text = "Score : " + this.score.ToString();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -38,5 +44,6 @@ public class PlayerManager : MonoBehaviour
     {
         this.score += score;
         lbl_Score.text = "Score : " + this.score.ToString();
+        PlayerPrefs.SetInt("session_score", this.score);
     }
 }
