@@ -29,7 +29,7 @@ public class PlayerManager : MonoBehaviour
             game_complete.Invoke();
             isEnd = true;
         }
-        if (isEnd == false && health <= 0)
+        else if (isEnd == false && health <= 0)
         {
             game_lose.Invoke();
             isEnd = true;
